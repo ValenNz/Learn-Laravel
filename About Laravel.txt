@@ -1,0 +1,35 @@
+	MVC adalah sebuah pendekatan perangkat lunak yang memisahkan aplikasi logika dari presentasi. MVC memisahkan aplikasi berdasarkan komponen- komponen aplikasi, seperti : manipulasi data, controller, dan user interface.
+
+	1.	Model, Model mewakili struktur data. Biasanya model berisi fungsi-fungsi yang membantu seseorang dalam pengelolaan basis data seperti memasukkan data ke basis data, pembaruan data dan lain-lain.
+	2.	View, View adalah bagian yang mengatur tampilan ke pengguna. Bisa dikatakan berupa halaman web.
+	3.	Controller, Controller merupakan bagian yang menjembatani model dan view.
+
+	Route atau Routing berperan sebagai penghubung antara user dengan keseluruhan framework. Dalam Laravel, setiap alamat web yang kita ketik di web browser akan melewati route terlebih dahulu. Route-lah yang menentukan ke mana proses akan dibawa, apakah ke Controller atau ke View.
+
+	Folder public tempaty menyimpan aset aset statis kita (css, js, gambar)
+
+	 env yang terletak di direktori paling luar project laravel kita. Isi file . env adalah konfigurasi atau pengaturan-pengaturan project laravel, semua konfigurasi digabung di dalam file .
+
+	 Blade adalah fitur yang disediakan Laravel untuk proses templating sederhana namun sangat bermanfaat dalam proses pengembangan tampilan halaman web. Tidak seperti fitur templating PHP populer lainnya, Blade tidak membatasi pemrogram untuk menggunakan kode PHP biasa dalam membuat kode untuk tampilan.
+
+	 {{  $var }} : menampilkan data untuk menghindari (htmlspecialchars)
+
+	 nama file harus ada blade unutk membantu menyimpan fungsi blade
+
+	
+
+--------------
+	- Model merupakan salah satu dari bagian MVC yang akan berkomunikasi dengan database. Model yang sudah terhubung ke database akan digunakan/dipanggil via Controller sebagaimana konsep MVC itu berjalan.
+
+	- Laravel collection adalah sebuah fitur bawaan laravel yang digunakan untuk mengolah data array, baik itu dari Eloquent maupun data yang dibuat sendiri berbentuk array.
+	- first : mncari elemen pertama
+	- firstWhere : emncari elemen pertama sesuai kondisi
+
+	- Laravel Controller merupakan salah satu bagian dimana seluruh fungsional web dibuat. Pada Controller dilakukan pengaturan untuk mengakses Model terkait dengan Database dan juga bagaimana mengirimkan datanya ke View. Berbagai pemrosesan juga dilakukan di dalam Controller.
+----------------
+
+-	Migration adalah sebuah fitur yang ada pada laravel. Dengan menggunakan migration laravel, memungkinkan kita untuk mengelola database dengan lebih mudah. Dengan menggunakan migration, kita bisa membuat table data dengan lebih mudah dan cepat.
+
+
+-------------------
+N+1 Query adalah suatu masalah yang terjadi ketika kita memerlukan untuk load data child dari relasi parent-child dimana kita melakukan banyak query select pada child data. N+1 disini artinya adalah 1 query untuk parent dan N adalah jumlah record pada table child. Pada artikel ini kita akan membahas bagaimana mengatasi permasalahan N+1 query di Laravel.
