@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostController;
 
 
 /*
@@ -103,12 +103,20 @@ Route::get('/categories', function(){
 // });
 
 
-Route::get('/login', [LoginController::class, 'index']);
+/* Routes Login  */
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest'); // name('login') memberi tahu ke http bahwa ini merupakan routes login | hanya bisa di acc ke user yang belum terautentifikasi
 Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
 
 
 /* Routes regristrasi  */
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', [DashboardController::class,'index']);
+Route::get('/dashboard', function(){
+    return view('dashboard.index');
+})->middleware('auth');
+
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
