@@ -29,7 +29,7 @@ class DashboardPostController extends Controller
      /* Menambha postingan */
     public function create()
     {
-        //
+        return view('dashboard.posts.create');
     }
 
     /**
