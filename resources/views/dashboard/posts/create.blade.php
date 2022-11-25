@@ -21,4 +21,16 @@
         </form>
     </div>
 
+    <script>
+        const title = document.querySelector('#title');
+        const slug = documetn.querySelectoe('#slug')
+
+        /* Menangani fetch */
+        title.addEventListener('change', function(){
+            fetch('/dashboard/posts/createSlug?title= +' + title.value) // mengirim data title berdasarkan get
+            .then(response => response.json())
+            .then(data =>slug.value = data.slug)
+        });
+    </script>
+
 @endsection
