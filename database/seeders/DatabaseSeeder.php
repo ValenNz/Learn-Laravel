@@ -25,11 +25,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         /** Sedding secara manual */
-        // User::create([
-        //     'name' => 'Nuevalen Refitra',
-        //     'email' => 'nuevalenra05@gamil.com',
-        //     'password' => bcrypt('12345')
-        // ]);
+        User::create([
+            'name' => 'Nuevalen Refitra',
+            'username' => 'Nuevalen Refitra A',
+            'email' => 'nuevalenra05@gamil.com',
+            'password' => bcrypt('12345')
+        ]);
 
         // User::create([
         //     'name' => 'Alfin Hilmawan',

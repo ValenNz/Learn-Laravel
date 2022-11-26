@@ -33,8 +33,13 @@
     {{-- Hitung jumlah postingan --}}
     @if ($posts->count()) {{-- akan menghasilkan truw --}}
         <div class="card mb-3 text-center">
-            <img src="https://picsum.photos/200" height="300px" class="card-img-top" alt="">
-            <div class="card-body">
+            @if ($posts[0]->image)
+                <div style="max-height: 350px; overflow:hidden;">
+                    <img src="{{ asset('storage/' . $posts[0]->image)}}" alt="{{ $posts[0]->category->name }}" class="img-fluid">                    
+                </div>
+            @else
+                <img src="https://picsum.photos/900/300" alt="" class="img-fluid">
+            @endif
             <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark"></a>{{ $posts[0]->title }}</h3> {{-- posts -> index 0 terus ambil title --}}
             <p>
                 <small class="text-muted">
@@ -57,7 +62,11 @@
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                     <div class="position-absolute px-2 py-1 text-white" style="background-color: rgba(0 ,0 ,0.9)" ><a href="/posts?category={{ $post->category->slug }}" class="text-white text-decoration-none"> {{ $post->category->name }} </a></div>
-                    <img src="https://picsum.photos/200" width="800" height="300" class="card-img-top" alt="">
+                        @if ($post->image)
+                            <img src="{{ asset('storage/' . $post->image)}}" alt="{{ $post->category->name }}" class="img-fluid">                    
+                        @else
+                            <img src="https://picsum.photos/200" width="800" height="300" class="card-img-top" alt="">
+                        @endif
                     <div class="card-body">
                       <h5 class="card-title">{{ $post->title }}</h5>
                       <p>

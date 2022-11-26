@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('user_id'); // unutk menghubungkan ke tabel categoris (foreign key)
             $table->string('title');
             $table->string('slug')->unique(); // memiliki key uniq (berbeda)
+            $table->String('image')->nullable();
             $table->text('excerpt'); // Isi lebih banyak (read more)
             $table->text('body');
             $table->timestamp('published_at')->nullable(); // unutk update pembuatan konten boleh kosong

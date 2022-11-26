@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- Link Css -->
     <!-- CSS only -->
@@ -22,6 +23,17 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
+
+    {{-- Trix editor --}}
+    <link rel="stylesheet" type="/css/text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
+    {{-- css --}}
+    <style>
+      trix-toolbar [data-trix-button-group="file-tols"]{
+        display:none;
+      }
+    </style>
   </head>
   <body>
     

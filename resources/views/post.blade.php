@@ -9,7 +9,13 @@
                 <div class="col-md-8">
                     {{-- menangkap data yang terkirim --}} 
                     <h2 class="mb-2">{{ $post->title }}</h2>
-                    <img src="https://picsum.photos/900/300" alt="" class="img-fluid">
+                    @if ($post->image)
+                        <div style="max-height: 350px; overflow:hidden;">
+                            <img src="{{ asset('storage/' . $post->image)}}" alt="{{ $post->category->name }}" class="img-fluid">                    
+                        </div>
+                    @else
+                        <img src="https://picsum.photos/900/300" alt="" class="img-fluid">
+                    @endif
 
                     <p class="mt-2">By. <a href="/posts?author={{ $post->author->username}}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/posts?category=/{{ $post->category->slug }}">{{ $post->category->name }}</a> </p> {{-- membuat tampilan sesuai categories --}}
 
